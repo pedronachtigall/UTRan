@@ -1,5 +1,5 @@
 # UTRan
-**UTR an**notation of *de novo* assembled transcripts. It is an experimental approach designed to identify UTR sequences in transcripts obtained thorugh de novo methods using the coding annotation obtained by the user and the read coverage within transcripts.
+**UTR an**notation of *de novo* assembled transcripts. It is an experimental approach designed to identify UTR sequences in transcripts obtained through *de novo* methods using the coding sequence annotation and the read coverage within transcripts.
 
 ## Pipeline
 ```
