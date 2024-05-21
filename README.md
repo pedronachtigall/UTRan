@@ -123,7 +123,7 @@ UTRan_output/
 ├── 5utr_sequences.fa
 ├── coverage.txt
 ├── report.txt
-├── Plots
+└── Plots
     ├── transcript_1.pdf
     ├── ...
     └── transcript_N.pdf
