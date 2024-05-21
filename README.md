@@ -51,6 +51,70 @@ conda activate utran_env
 It may be needed to apply "execution permission" to all bin executables: ```chmod +x UTRan/bin/*```
 
 ## Usage
+```
+usage: UTRan.py [-h] [-t TRANSCRIPTS] [-c CDS] [-r READS] [-o [OUTPUT]]
+                [-cz [CHECKZEROS]] [-m [MISMATCHES]] [-cp [CHANGINGPOINT]]
+                [-ws [WINDOWSIZE]] [-minSF [MINSIZEFIVE]]
+                [-minST [MINSIZETHREE]] [-ts [TOOSHORT]] [-mq [MAPQUALITY]]
+                [-minR [MINREAD]] [-maxR [MAXREAD]] [-T THREADS]
+
+UTRan - UTR sequence annotator using de novo transcriptome assembly.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -t TRANSCRIPTS, --transcripts TRANSCRIPTS
+                        Mandatory - Fasta file of assembled contigs. Use the
+                        full length transcripts assembled.
+  -c CDS, --cds CDS     Mandatory - file with CDS annotation. This file can be
+                        in BED, GTF or GFF format. It also accepts a FASTA
+                        format with the CDSs, but it is important to note
+                        that, in this case, the CDSs must be extracted
+                        directly from the assembled contigs to ensure
+                        identical residues between CDSs and contigs.
+  -r READS, --reads READS
+                        Mandatory - Fastq(.gz) file of UNPAIRED reads. Please
+                        use merged reads if working with paired-end data. See
+                        UTRan repository for more details.
+  -o [OUTPUT], --output [OUTPUT]
+                        Optional - path to output folder (e.g.,
+                        /path/to/output/folder/). If not declared, it will be
+                        created at the working directory.
+                        [Default="UTRan_output"]
+  -cz [CHECKZEROS], --CheckZeros [CHECKZEROS]
+                        Optional - Turn on this parameter to perform an
+                        additional check to detect zero coverage in the middle
+                        of the annotated CDS. Zero coverage in the middle of
+                        CDS may represent a putative chimeric transcript. To
+                        perform this step, specify "True". [Default="False"]
+  -m [MISMATCHES], --mismatches [MISMATCHES]
+                        Optional - Number of allowable mismatches to keep in
+                        alignment. [Default = 0]
+  -cp [CHANGINGPOINT], --changingpoint [CHANGINGPOINT]
+                        Optional - Value between 0 and 1 to be used as
+                        threshold to detect changing points in the read
+                        coverage of contigs to detect the UTRs. [Default =
+                        0.6]
+  -ws [WINDOWSIZE], --WindowSize [WINDOWSIZE]
+                        Optional - Window size to be used to detect changing
+                        points. [Default = 10]
+  -minSF [MINSIZEFIVE], --minSizeFive [MINSIZEFIVE]
+                        Optional - Minimum size of 5'UTR. [Default = 30]
+  -minST [MINSIZETHREE], --minSizeThree [MINSIZETHREE]
+                        Optional - Minimum size of 3'UTR. [Default = 30]
+  -ts [TOOSHORT], --tooShort [TOOSHORT]
+                        Optional - Minimum length of clipped reads. [Default =
+                        100]
+  -mq [MAPQUALITY], --mapQuality [MAPQUALITY]
+                        Optional - Minimum mapping quality. Please, note that
+                        reads with multiple mappings get assigned a quality of
+                        0 by bwa. [Default = 0]
+  -minR [MINREAD], --minRead [MINREAD]
+                        Optional - Minimum read length. [Default = 100]
+  -maxR [MAXREAD], --maxRead [MAXREAD]
+                        Optional - Maximum read length. [Default = 1000]
+  -T THREADS, --threads THREADS
+                        Optional - Number of threads. [Default = 2]
+```
 
 ## Inputs
 
