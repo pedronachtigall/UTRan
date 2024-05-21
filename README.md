@@ -116,9 +116,18 @@ optional arguments:
                         Optional - Number of threads. [Default = 2]
 ```
 
-## Inputs
-
 ## Outputs
+```
+UTRan_output/
+├── 3utr_sequences.fa
+├── 5utr_sequences.fa
+├── coverage.txt
+├── report.txt
+├── Plots
+    ├── transcript_1.pdf
+    ├── ...
+    └── transcript_N.pdf
+```
 
 ## Contact
 :bug::sos::speech_balloon:
